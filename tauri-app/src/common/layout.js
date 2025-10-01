@@ -1,7 +1,7 @@
 async function injectLayout(
   headerId = "header-placeholder",
-  footerId = "footer-placeholder",
-  mainId = "view"
+  // footerId = "footer-placeholder",
+  // mainId = "view"
 ) {
   const _header =
     document.getElementById(headerId) ||

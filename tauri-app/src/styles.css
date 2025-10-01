@@ -19,18 +19,20 @@ body {
   margin: 0;
 }
 .home-content {
-  min-height: 100%;       
-  border: 1px solid #186185af;
+  position: relative; /* чтобы .mesh-bg позиционировалась внутри */
+  min-height: 100%;
+  border-bottom: 1px solid #186185af;
   width: 100%;
+  order: 1;
   background: url("../assets/background_layout.png") no-repeat center center fixed;
-  background-size: cover;     
+  background-size: cover;
 }
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 65px;
+  height: 75px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,7 +44,6 @@ body {
   flex-direction: column;
   height: 100vh;
 }
-
 .header .row {
   width: 95%;
   max-width: 1200px;
@@ -64,9 +65,13 @@ body {
 
 #footer-placeholder {
   display: flex;
+  position: sticky;
+  margin-top: -150px;
+  width: 100%;
   background-color: #101829;
   height: 150px;
-  >p {
+  z-index: 1000;
+  > p {
     margin-left: 20px;
   }
 }
@@ -81,5 +86,42 @@ body {
     position: absolute;
     left: 20px;
     top: 7px;
+  }
+}
+
+.filter-razor {
+  position: absolute;
+  height: 75vh;
+
+  background: radial-gradient(
+    120% 80% at 50% 0%,
+    rgba(0, 30, 40, 0.65) 0%,
+    rgba(0, 45, 60, 0.55) 35%,
+    rgba(10, 50, 35, 0.55) 60%,
+    rgba(5, 15, 10, 0.75) 100%
+  );
+}
+
+.mesh-bg {
+  position: absolute;
+  inset: 0; /* top/right/bottom/left: 0 */
+  z-index: 1;
+  pointer-events: none; /* не блокирует клики по контенту */
+  background: url("./assets/mesh.svg") center top;
+
+  animation: mesh-scroll 20s linear infinite;
+}
+
+.home-content > *:not(.mesh-bg) {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes mesh-scroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 90px 80px;
   }
 }
