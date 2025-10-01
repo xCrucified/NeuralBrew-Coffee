@@ -4,7 +4,7 @@
     <pattern id="fine-grid" width="90" height="80" patternUnits="userSpaceOnUse">
       <path d="M90 0H0V80" fill="none"
             stroke="#243742"
-            stroke-width="1"
+            stroke-width="1.5"
             vector-effect="non-scaling-stroke"
             shape-rendering="crispEdges"/>
     </pattern>
