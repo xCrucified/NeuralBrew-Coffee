@@ -30,13 +30,15 @@ async function injectLayout(
 
   const headerRes = await fetch("./components/header.html");
   // const mainRes = await fetch("./components/main.html");
-  const footerRes = await fetch("./components/footer.html");
+  // const footerRes = await fetch("./components/footer.html");
 
-  if (!footerRes.ok && !headerRes.ok) {
-    alert("can't load header.html", res.status);
-    return;
-  }
-  return _header.innerHTML = await headerRes.text(), _footer.innerHTML = await footerRes.text();
+  // if (!footerRes.ok && !headerRes.ok) {
+  //   alert("can't load header.html", res.status);
+  //   return;
+  // }
+  return _header.innerHTML = await headerRes.text();
+  // _main.innerHTML = await mainRes.text();
+  // _footer.innerHTML = await footerRes.text();
 }
 
 if (document.readyState === "loading") {
