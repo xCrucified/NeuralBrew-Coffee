@@ -28,7 +28,7 @@ async function injectLayout(
   //     return d;
   //   })();
 
-  const headerRes = await fetch("./components/header.html");
+  const headerRes = await fetch("./header.html");
   // const mainRes = await fetch("./components/main.html");
   // const footerRes = await fetch("./components/footer.html");
 

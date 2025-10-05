@@ -23,7 +23,6 @@ body {
   min-height: 100%;
   border-bottom: 1px solid #186185af;
   width: 100%;
-  order: 1;
   background: url("../assets/background_layout.png") no-repeat center center fixed;
   background-size: cover;
 }
@@ -36,7 +35,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #121829;
+  background-color: #121829 ; /* #132820 */
   z-index: 1000;
 }
 .container {
@@ -58,24 +57,33 @@ body {
   align-items: center;
   gap: 10px;
 }
-
 #view {
   flex: 1;
 }
-
 #footer-placeholder {
   display: flex;
   position: sticky;
-  margin-top: -150px;
-  width: 100%;
-  background-color: #101829;
-  height: 150px;
+  margin-top: -220px;
+  width: 100vw;
+  background-color: #121829; /* #132820 */
+  height: 220px;
   z-index: 1000;
   > p {
     margin-left: 20px;
   }
+  > div:first-child {
+    flex: 1;
+    border: 1px solid red;
+  }
+  > div:nth-child(2) {
+    border: 1px solid green;
+    flex: 1;
+  }
+  > div:last-child {
+    border: 1px solid blue;
+    flex: 1;
+  }
 }
-
 .logo-group {
   position: relative;
   > img:nth-child(1) {
@@ -101,15 +109,14 @@ body {
     rgba(5, 15, 10, 0.75) 100%
   );
 }
-
 .mesh-bg {
   position: absolute;
   inset: 0; /* top/right/bottom/left: 0 */
   z-index: 1;
   pointer-events: none; /* не блокирует клики по контенту */
-  background: url("./assets/mesh.svg") center top;
-
-  animation: mesh-scroll 20s linear infinite;
+  background: url("./assets/mesh.svg") right center;
+  animation: mesh-scroll 60s linear infinite;
+  opacity: 0.4;
 }
 
 .home-content > *:not(.mesh-bg) {
@@ -119,9 +126,9 @@ body {
 
 @keyframes mesh-scroll {
   from {
-    background-position: 0 0;
+    background-position: 0px 0px;
   }
   to {
-    background-position: 90px 80px;
+    background-position: 100% 100%;
   }
 }

@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="1080" viewBox="0 0 1300 1080">
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1980 1080">
   <defs>
-    <!-- Шаг сетки: 80px -->
-    <pattern id="fine-grid" width="90" height="80" patternUnits="userSpaceOnUse">
-      <path d="M90 0H0V80" fill="none"
-            stroke="#243742"
-            stroke-width="1.5"
-            vector-effect="non-scaling-stroke"
+    <!-- Шаг сетки: 150 x 140 -->
+    <pattern id="fine-grid" width="150" height="140" patternUnits="userSpaceOnUse">
+      <!-- Рисуем ТОЛЬКО верх и лево. Для 1px линии — координаты .5 -->
+      <path d="M0.5 0 V140   M0 0.5 H150"
+            fill="none"
+            stroke="#468b99"
+            stroke-width="0.5"
             shape-rendering="crispEdges"/>
     </pattern>
   </defs>
-
-  <rect width="1300" height="1080" fill="url(#fine-grid)"/>
+  <rect width="1920" height="1080" fill="url(#fine-grid)"/>
 </svg>
