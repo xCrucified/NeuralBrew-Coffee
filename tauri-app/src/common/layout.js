@@ -47,4 +47,4 @@ if (document.readyState === "loading") {
   injectLayout();
 }
 
-export {}; //module
+export {}; //module EXPORT

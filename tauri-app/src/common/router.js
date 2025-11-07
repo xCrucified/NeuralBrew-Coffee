@@ -36,4 +36,4 @@ async function navigate() {
 window.addEventListener("hashchange", navigate);
 window.addEventListener("DOMContentLoaded", navigate);
 
-export {};  //module
+export {}; //module EXPORT
