@@ -21,28 +21,26 @@ body {
 .home-container {
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 100%;
+  height: 100vh;
 }
 .home-content {
   position: relative; /* чтобы .mesh-bg позиционировалась внутри */
   border-bottom: 1px solid #186185af;
   height: 100%;
   width: 100%;
-  background: url("../assets/background_layout.png") no-repeat center center
-    fixed;
+  background: url("../assets/background_layout.png") no-repeat center center fixed;
   background-size: cover;
 }
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
   height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #121829; /* #132820 */
+  border-bottom: 1px solid #0c5e5ab2;
   z-index: 3000;
 }
 .content {
@@ -53,46 +51,70 @@ body {
   font-size: 32px;
   position: absolute;
   width: 100%;
-  height: 66%;
+  top: 25%;
   z-index: 2000;
-  h1 > span {
-    color: #47ab8b;
-  }
-  > div {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  .primary-btn,
-  .secondary-btn {
-    font-size: 18px;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  .primary-btn {
-    background: linear-gradient(90deg, #16a49d, #38a582);
-    color: #121829;
-    font-size: small;
-  }
-  .secondary-btn {
-    background: none;
-    border: 2px solid #38a582;
-    color: #cffbff;
-    font-size: small;
-  }
-  > p {
-    font-size: 26px;
-    margin-bottom: 20px;
-    color: #a1cbb5;
-    font-weight: 400;
+}
+.content > h1 > span {
+  color: #47ab8b;
+}
+#view {
+  margin-top: 75px; /* чтобы контент не прятался за фиксированным хедером */
+  height: calc(100vh - 70px);
+}
+.content > div {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.primary-btn,
+.secondary-btn {
+  font-size: 18px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.primary-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  font-weight: 600;
+  background: linear-gradient(90deg, #16a49d, #38a582);
+  color: #121829;
+  font-size: small;
+
+
+  img{
+    transform: translateX(0);
+    transition: transform 0.1s ease-in-out;
   }
 }
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+.secondary-btn {
+  font-weight: 600;
+  background: none;
+  border: 2px solid #38a582;
+  color: #cffbff;
+  font-size: small;
+  transition: all 0.3s ease-in-out;
+}
+.primary-btn:hover {
+  background: linear-gradient(90deg, #11c9c0, #36ca9b);
+  color: #121829;
+  img{
+    transform: translateX(5px);
+  }
+}
+.secondary-btn:hover {
+  background-color: #0c5e5a6c;
+  color: #d2fae5;
+  transition: all 0.3s ease-in-out;
+}
+.content > p {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #a1cbb5;
+  font-weight: 400;
 }
 .header .row {
   width: 95%;
@@ -113,20 +135,18 @@ body {
   color: #97d6c2;
   font-weight: 600;
 }
-#view {
-  flex: 1;
-}
 #footer-placeholder {
   background-color: #121829;
-  border-top: 0.6px solid #0c5e5ab2;
-  padding: 20px 0; /* add some spacing */
+  padding: 40px 0; /* add some spacing */
   z-index: 1000;
 }
 .footer-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
   margin: 0 auto;
   gap: 20px;
 }
@@ -157,9 +177,6 @@ div > p,
 div > h3 {
   text-align: center;
   margin: 5px 0;
-}
-div {
-  gap: 10px;
 }
 
 .logo-group {
@@ -211,22 +228,8 @@ div {
   }
 }
 
-@media screen and (max-width: 857px) and (min-width: 659px) {
+@media screen and (max-width: 855px) {
   .content {
-    font-size: 24px;
-    height: auto;
-    top: 20%;
-    h1 {
-      font-size: 28px;
-    }
-    > p {
-      font-size: 18px;
-    }
-    .primary-btn,
-    .secondary-btn {
-      font-size: 16px;
-      padding: 10px 20px;
-    }
+    background-color: black;
   }
-  
 }

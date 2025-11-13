@@ -29,7 +29,7 @@ async function navigate() {
   document.querySelectorAll(".btn-group a").forEach((a) => {
     a.classList.toggle("active", a.getAttribute("href") === `#${path}`);
   });
- 
+
   window.scrollTo(0, 0);
 }
 
