@@ -32,7 +32,11 @@ async function navigate() {
 
   window.scrollTo(0, 0);
 }
-
+window.addEventListener("load", () => {
+  if (!location.hash) {
+    return location.hash = "#/home";
+  }
+});
 window.addEventListener("hashchange", navigate);
 window.addEventListener("DOMContentLoaded", navigate);
 
