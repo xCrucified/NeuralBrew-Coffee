@@ -1,10 +1,3 @@
-const view = document.getElementById("view");
-if (view && !view.querySelector(".nb-scan")) {
-  const scan = document.createElement("div");
-  scan.className = "nb-scan";
-  view.appendChild(scan);
-}
-
 const buttons = document.querySelectorAll('.nav-link');
 
 function setActiveButton(hash) {
@@ -22,7 +15,6 @@ buttons.forEach(btn => {
   });
 });
 
-setActiveButton(location.hash || '#/');
 window.addEventListener('hashchange', () => {
   setActiveButton(location.hash);
 });
