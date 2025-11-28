@@ -31,7 +31,8 @@ body {
   position: relative; /* чтобы .mesh-bg позиционировалась внутри */
   height: 100%;
   width: 100%;
-  background: url("../assets/background_layout.png") no-repeat center center fixed;
+  background: url("../assets/background_layout.png") no-repeat center center
+    fixed;
   background-size: cover;
 }
 .header {
@@ -86,7 +87,7 @@ body {
   color: #121829;
   font-size: small;
 
-  img{
+  img {
     transform: translateX(0);
     transition: transform 0.1s ease-in-out;
   }
@@ -102,7 +103,7 @@ body {
 .primary-btn:hover {
   background: linear-gradient(90deg, #11c9c0, #36ca9b);
   color: #121829;
-  img{
+  img {
     transform: translateX(5px);
   }
 }
@@ -235,7 +236,7 @@ div > h3 {
     background-color: black;
   }
 }
-span>nav>button{
+span > nav > button {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -243,7 +244,7 @@ span>nav>button{
   color: inherit;
   padding: 8px 12px;
 }
-span>nav>button:hover{
+span > nav > button:hover {
   background-color: #0c5e5a6c;
   border-radius: 6px;
 }
@@ -267,11 +268,11 @@ span>nav>button:hover{
   border-radius: 6px;
   color: rgb(49, 48, 48);
 
-  box-shadow: 0px 5px 40px -10px rgba(45,255,196,1);
+  box-shadow: 0px 5px 40px -10px rgba(45, 255, 196, 1);
 }
 
 .menu-container {
-  background: linear-gradient(to bottom,#121829, #1c2643, black);
+  background: linear-gradient(to bottom, #121829, #1c2643, black);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -287,26 +288,72 @@ span>nav>button:hover{
   border: 2px blue solid;
 }
 .menu-label {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   margin-top: 2%;
   text-align: center;
-  color: #cffbff;
+  color: #00dbb3;
+  padding: 25px;
+  margin-bottom: 20px;
+}
+.menu-label > label {
+  font-size: 45px;
+  font-weight: 500;
+  color: #00d9c3;
+}
+.menu-label > p {
+  color: #87c8d4;
+  font-size: 18px;
+  font-weight: 400;
+  color: #b2f7ff;
 }
 .menu-mass {
   display: flex;
   gap: 10px;
 }
-.menu-mass>div {
+.menu-mass > div {
+  display: flex;
   flex: 1;
-  height: 120px;
+  padding: 10px;
   border: 2px green solid;
+  align-items: center;
+  gap: 15px;
 }
+.menu-text > label {
+  font-size: 24px;
+  font-weight: 500;
+  color: #cffbff;
+}
+.menu-text > p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #43abbf;
+}
+.menu-image {
+  border: 1px #0d4a61 solid;
+  border-radius: 8px;
+  width: 120px;
+  height: 120px;
+  /* add shadow */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.menu-mass > div:nth-child(1) .menu-image {
+  background-image: url("../assets/Digital-Brews.jpeg");
+}
+.menu-mass > div:nth-child(2) .menu-image {
+  background-image: url("../assets/Bio-Sustenance.jpeg");
+}
+
 
 .menu-items {
   display: flex;
   gap: 15px;
   margin-top: 20px;
 }
-.menu-items>div {
+.menu-items > div {
   flex: 1;
   border: 2px orange solid;
   height: 150px;
