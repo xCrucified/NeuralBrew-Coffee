@@ -379,12 +379,35 @@ span > nav > button:hover {
 }
 .category {
   display: flex;
-  position: static;
-  background: #0c5e5a6c;
   border-radius: 25px;
-  padding: 0px 12px 0px;
+  padding: 0px 12px;
   align-self: flex-start;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
 }
+/* .menu-item[data-category="neural"] .category::before {
+  content: "neural";
+}
+.menu-item[data-category="neural"] .category {
+  background: #0c5e5a6c;
+  border-color: #0c5e5a;
+}
+.menu-item[data-category="quantum"] .category::before {
+  content: "quantum";
+}
+.menu-item[data-category="quantum"] .category {
+  background: #4b008266;
+  border-color: #4b0082;
+}
+.menu-item[data-category="cryo"] .category::before {
+  content: "cryo";
+}
+.menu-item[data-category="cryo"] .category {
+  background: #223a61;
+  border-color: #264e92;
+} */
+
 .menu-footer {
   margin: 30px 0 30px 0;
   text-align: center;

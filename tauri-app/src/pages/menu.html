@@ -22,71 +22,8 @@
     </div>
     <div class="menu-items">
       <div>
-        <!-- coffe -->
-        <div class="menu-item">
-          <div>
-            <h3>Neural Espresso</h3>
-            <p style="font-size:20px; color: #00de73;">₹12.50</p>
-          </div>
-          <p style="color: #3f9cac; font-size:medium;">AI-enhanced espresso with synthetic dark matter undertones</p>
-          <div class="category"><p>neural</p></div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h3>Neural Espresso</h3>
-            <p style="font-size:20px; color: #00de73;">₹12.50</p>
-          </div>
-          <p style="color: #3f9cac; font-size:medium;">AI-enhanced espresso with synthetic dark matter undertones</p>
-          <div class="category"><p>neural</p></div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h3>Neural Espresso</h3>
-            <p style="font-size:20px; color: #00de73;">₹12.50</p>
-          </div>
-          <p style="color: #3f9cac; font-size:medium;">AI-enhanced espresso with synthetic dark matter undertones</p>
-          <div class="category"><p>neural</p></div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h3>Neural Espresso</h3>
-            <p style="font-size:20px; color: #00de73;">₹12.50</p>
-          </div>
-          <p style="color: #3f9cac; font-size:medium;">AI-enhanced espresso with synthetic dark matter undertones</p>
-          <div class="category"><p>neural</p></div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h3>Neural Espresso</h3>
-            <p style="font-size:20px; color: #00de73;">₹12.50</p>
-          </div>
-          <p style="color: #3f9cac; font-size:medium;">AI-enhanced espresso with synthetic dark matter undertones</p>
-          <div class="category"><p>neural</p></div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h3>Neural Espresso</h3>
-            <p style="font-size:20px; color: #00de73;">₹12.50</p>
-          </div>
-          <p style="color: #3f9cac; font-size:medium;">AI-enhanced espresso with synthetic dark matter undertones</p>
-          <div class="category"><p>neural</p></div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h3>Neural Espresso</h3>
-            <p style="font-size:20px; color: #00de73;">₹12.50</p>
-          </div>
-          <p style="color: #3f9cac; font-size:medium;">AI-enhanced espresso with synthetic dark matter undertones</p>
-          <div class="category"><p>neural</p></div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h3>Neural Espresso</h3>
-            <p style="font-size:20px; color: #00de73;">₹12.50</p>
-          </div>
-          <p style="color: #3f9cac; font-size:medium;">AI-enhanced espresso with synthetic dark matter undertones</p>
-          <div class="category"><p>neural</p></div>
-        </div>
+        <div class="menu-item" data-id="neural"></div>
+        <div class="menu-item" data-id="quantum"></div>
       </div>
       <div>
         <!-- croissant -->
@@ -105,3 +42,43 @@
     </div>
   </div>
 </div>
+
+<script>
+  const menu = {
+    neural: {
+      id: "neural",
+      title: "Neural Espresso",
+      price: 12.5,
+      desc: "AI-enhanced espresso with synthetic dark matter undertones",
+      category: "neural",
+      categoryColor: "#0c5e5a",
+    },
+    quantum: {
+      id: "quantum",
+      title: "Quantum Brew",
+      price: 15.9,
+      desc: "Quantum-stabilized caffeine infusion",
+      category: "quantum",
+      categoryColor: "#4b0082",
+    },
+  };
+
+  document.querySelectorAll(".menu-item").forEach((item) => {
+    const id = item.dataset.id;
+    const data = menu[id];
+    if (!data) return (item.innerHTML = "Item data not found");
+    console.log(data.title);
+    const htmlData = `
+        <div>
+          <h3>${data.title}</h3>
+          <p class="price">₹${data.price.toFixed(2)}</p>
+        </div>
+        <p class="desc">${data.desc}</p>
+        <div class="category" style="
+          background:${data.categoryColor}33;
+          border:1px solid ${data.categoryColor};
+        ">${data.category}</div>
+      `;
+    item.innerHTML = htmlData;
+  });
+</script>
